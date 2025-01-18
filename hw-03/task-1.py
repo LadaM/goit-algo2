@@ -1,6 +1,7 @@
 from collections import deque
 
-def bfs(capacity_matrix, flow_matrix, source, target, parent):
+
+def bfs(capacity_matrix, flow_matrix, source, sink, parent):
     visited = [False] * len(capacity_matrix)
     queue = deque([source])
     visited[source] = True
@@ -17,21 +18,22 @@ def bfs(capacity_matrix, flow_matrix, source, target, parent):
             ):
                 parent[neighbor] = current_node
                 visited[neighbor] = True
-                if neighbor == target:
+                if neighbor == sink:
                     return True
                 queue.append(neighbor)
 
     return False
 
-def edmonds_karp(capacity_matrix, source, target):
+
+def edmonds_karp(capacity_matrix, source, sink):
     num_nodes = len(capacity_matrix)
     flow_matrix = [[0] * num_nodes for _ in range(num_nodes)]
     parent = [-1] * num_nodes
     max_flow = 0
 
-    while bfs(capacity_matrix, flow_matrix, source, target, parent):
+    while bfs(capacity_matrix, flow_matrix, source, sink, parent):
         path_flow = float("Inf")
-        current_node = target
+        current_node = sink
 
         while current_node != source:
             previous_node = parent[current_node]
@@ -41,7 +43,7 @@ def edmonds_karp(capacity_matrix, source, target):
             )
             current_node = previous_node
 
-        current_node = target
+        current_node = sink
         while current_node != source:
             previous_node = parent[current_node]
             flow_matrix[previous_node][current_node] += path_flow
@@ -51,6 +53,23 @@ def edmonds_karp(capacity_matrix, source, target):
         max_flow += path_flow
 
     return max_flow
+
+
+def generate_report(capacity_matrix, terminals, stores):
+    terminal_header = "Terminal"
+    store_header = "Store"
+    flow_header = "Actual Flow"
+    col1_width = max(len(terminal_header), max(len(label) for label in terminals.values()))
+    col2_width = max(len(store_header), max(len(label) for label in stores.values()))
+    report = f"| {terminal_header:^{col1_width}} | {store_header:^{col2_width}} | {flow_header:^{len(flow_header)}} |\n"
+    report += "-" * len(report) + "\n"
+
+    for terminal_id, terminal_name in terminals.items():
+        for store_id, store_name in stores.items():
+            max_flow = edmonds_karp(capacity_matrix, terminal_id, store_id)
+            report += f"| {terminal_name:^{col1_width}} | {store_name:^{col2_width}} | {max_flow:^{len(flow_header)}} |\n"
+
+    return report
 
 if __name__ == "__main__":
     capacity_matrix = [
@@ -79,10 +98,8 @@ if __name__ == "__main__":
         [0,  0,   0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],  # Store 14
     ]
 
-    terminal_1 = 0  # Terminal 1
-    store_14 = 19  # Store 14
-    print(f"Maximum flow from Terminal 1 to Store 14: {edmonds_karp(capacity_matrix, terminal_1, store_14)}")
+    terminals = {0: "Terminal 1", 1: "Terminal 2"}
+    stores = {i: f"Store {i - 5}" for i in range(6, 20)}
 
-    terminal_2 = 1  # Terminal 2
-    print(f"Maximum flow from Terminal 2 to Store 13: {edmonds_karp(capacity_matrix, terminal_2, store_14)}")
-
+    report = generate_report(capacity_matrix, terminals, stores)
+    print(report)
