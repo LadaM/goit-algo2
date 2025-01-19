@@ -64,6 +64,10 @@ class Trie:
     def is_empty(self):
         return self.size == 0
 
+    def contains(self, key):
+        return self.get(key) is not None
+
+
     def longest_prefix_of(self, s):
         if not isinstance(s, str) or not s:
             raise TypeError(
@@ -119,5 +123,8 @@ if __name__ == "__main__":
     trie.put("app", 2)
     trie.put("banana", 3)
     trie.put("bat", 4)
-    keys = trie.keys()
-    print(keys)
+    trie.put("batman", 5)
+
+    print(trie.contains("apple"))  # True
+    print(trie.contains("ap"))  # False
+    print(trie.contains("batman"))  # True
