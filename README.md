@@ -9,3 +9,6 @@ Design and Analysis of Algorithms course homeworks
 - [hw-02](hw-02) - homework 2 - greedy algorithms & dynamic programming
   - [task-1](hw-02/task-1.py) - optimising printing time given print jobs with priority and printer constraints
   - [task-2](hw-02/task-2.py) - finding optimal way to cut the rod using memoization and dynamic programming
+- [hw-03](hw-03) - homework 3 - graphs and trees
+  - [task-1](hw-03/task-1.py) - using edmonds-karp algorithm to find the maximum flow in logistic network
+  - [task-2](hw-03/task-2.py) - analyzing performance of OOBTree and Dict

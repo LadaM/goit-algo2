@@ -1,5 +1,4 @@
 ## Task 1
-
 [task-1.py](task-1.py)
 
 ### Flow between terminals and stores
@@ -52,3 +51,12 @@
 4. Чи є вузькі місця, які можна усунути для покращення ефективності логістичної мережі?
    - Currently, all stores except 6 and 7 are supplied to their fullest capacity by the network
    - The network can be improved by increasing capacity of the flow to the warehouses 2 and 3
+
+## Task 2
+[task-2.py](task-2.py)
+
+* Number of items: 100000
+* Total range_query time for OOBTree: 0.000242 seconds
+* Total range_query time for Dict: 0.533428 seconds
+
+The OOBTree works much faster than default dictionary. Therefore, it has a lower time complexity.
