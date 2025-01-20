@@ -9,7 +9,7 @@ class Trie:
         self.root = TrieNode()
         self.size = 0
 
-    def put(self, key, value=None):
+    def put(self, key, value="$"):
         if not isinstance(key, str) or not key:
             raise TypeError(
                 f"Illegal argument for put: key = {key} must be a non-empty string"
