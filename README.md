@@ -12,3 +12,7 @@ Design and Analysis of Algorithms course homeworks
 - [hw-03](hw-03) - homework 3 - graphs and trees
   - [task-1](hw-03/task-1.py) - using edmonds-karp algorithm to find the maximum flow in logistic network
   - [task-2](hw-03/task-2.py) - analyzing performance of OOBTree and Dict
+- [hw-04](hw-04) - homework 4 - tries
+  - [trie](hw-04/trie.py) - trie implementation
+  - [task-1](hw-04/task-1.py) - counting words with suffix, checking if trie has prefix
+  - [task-2](hw-04/task-2.py) - longest common word of list of strings
