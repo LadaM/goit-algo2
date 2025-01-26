@@ -18,3 +18,4 @@ Design and Analysis of Algorithms course homeworks
   - [task-2](hw-04/task-2.py) - longest common word of list of strings
 - [hw-05](hw-05) - homework 5 - algorithms working with big data
   - [task-1](hw-05/task-1.py) - checking password uniqueness with BloomFilter
+  - [task-2](hw-05/task-2.py) - comparing performance of HyperLogLog and set for finding unique IP addresses
