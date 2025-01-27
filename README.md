@@ -20,4 +20,5 @@ Design and Analysis of Algorithms course homeworks
   - [task-1](hw-05/task-1.py) - checking password uniqueness with BloomFilter
   - [task-2](hw-05/task-2.py) - comparing performance of HyperLogLog and set for finding unique IP addresses
 - [hw-06](hw-06) - homework 6 - MapReduce
-  - [task-1](hw-06/task-1.py) - MapReduce implementation
+  - [task-1](hw-06/task-1.py) - MapReduce implementation, finding most frequent words
+![img.png](img.png)
