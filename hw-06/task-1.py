@@ -1,8 +1,8 @@
 import string
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor
-
 import requests
+import matplotlib.pyplot as plt
 
 
 def get_text(url):
@@ -10,7 +10,7 @@ def get_text(url):
         response = requests.get(url)
         response.raise_for_status()
         return response.text
-    except requests.RequestException as e:
+    except requests.RequestException:
         return None
 
 
@@ -19,7 +19,7 @@ def remove_punctuation(text):
 
 
 def map_function(word):
-    return word, 1
+    return word.lower(), 1
 
 
 def shuffle_function(mapped_values):
@@ -55,13 +55,28 @@ def map_reduce(text, search_words=None):
     return dict(reduced_values)
 
 
+def visualize_top_words(word_counts, top_n=10):
+    # sort by frequency
+    sorted_words = sorted(word_counts.items(), key=lambda x: x[1], reverse=True)[:top_n]
+    words, counts = zip(*sorted_words)
+
+    # make plot
+    plt.figure(figsize=(10, 6))
+    plt.bar(words, counts)
+    plt.xlabel("Word")
+    plt.ylabel("Frequency")
+    plt.title(f"Top-{top_n} words")
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+    plt.show()
+
+
 if __name__ == "__main__":
     url = "https://gutenberg.net.au/ebooks01/0100021.txt"
+
     text = get_text(url)
     if text:
-        search_words = ["war", "peace", "love"]
-        result = map_reduce(text, search_words)
-
-        print("Результат підрахунку слів:", result)
+        word_counts = map_reduce(text)
+        visualize_top_words(word_counts, top_n=20)
     else:
-        print("Помилка: Не вдалося отримати вхідний текст.")
+        print("Error fetching text.")
