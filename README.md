@@ -23,3 +23,4 @@ Design and Analysis of Algorithms course homeworks
   - [task-1](hw-06/task-1.py) - MapReduce implementation, finding most frequent words
 ![img.png](img.png)
 - [hw-07](hw-07) - homework 7 - using cache
+  - [task-1](hw-07/task-1.py) - using LRU cache for range sum values with updates & cache invalidation when the values are updated => the efficiency of using the LRU cache is increased with fewer updates and is limited when there are many updates
