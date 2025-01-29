@@ -22,3 +22,4 @@ Design and Analysis of Algorithms course homeworks
 - [hw-06](hw-06) - homework 6 - MapReduce
   - [task-1](hw-06/task-1.py) - MapReduce implementation, finding most frequent words
 ![img.png](img.png)
+- [hw-07](hw-07) - homework 7 - using cache
