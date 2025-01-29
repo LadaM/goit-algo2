@@ -21,6 +21,8 @@ Design and Analysis of Algorithms course homeworks
   - [task-2](hw-05/task-2.py) - comparing performance of HyperLogLog and set for finding unique IP addresses
 - [hw-06](hw-06) - homework 6 - MapReduce
   - [task-1](hw-06/task-1.py) - MapReduce implementation, finding most frequent words
-![img.png](img.png)
+![img.png](20_most_frequent_words_result.png)
 - [hw-07](hw-07) - homework 7 - using cache
   - [task-1](hw-07/task-1.py) - using LRU cache for range sum values with updates & cache invalidation when the values are updated => the efficiency of using the LRU cache is increased with fewer updates and is limited when there are many updates
+  - [task-2](hw-07/task-2.py) - comparing the performance of LRU cache vs SplayTree for calculating Fibonacci numbers
+![img_1.png](fib_lru_splay_tree_comparison.png)
