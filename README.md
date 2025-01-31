@@ -28,3 +28,4 @@ Design and Analysis of Algorithms course homeworks
 ![img_1.png](fib_lru_splay_tree_comparison.png)
 - [hw-08](hw-08) - homework 8 - algorithms of flow control and speed limitation
   - [task-1](hw-08/task-1.py) - limiting the frequency of messages per user using sliding window
+  - [task-2](hw-08/task-2.py) - limiting the frequency of messages per user using throttling rate limiter
