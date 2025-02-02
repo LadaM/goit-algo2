@@ -29,3 +29,5 @@ Design and Analysis of Algorithms course homeworks
 - [hw-08](hw-08) - homework 8 - algorithms of flow control and speed limitation
   - [task-1](hw-08/task-1.py) - limiting the frequency of messages per user using sliding window
   - [task-2](hw-08/task-2.py) - limiting the frequency of messages per user using throttling rate limiter
+- [hw-09](hw-09) - homework 9 - optimization algorithms
+  - [task](hw-09/task.py) - using hill climbing, random local search and simulated annealing to find the minimum of a function
