@@ -31,3 +31,6 @@ Design and Analysis of Algorithms course homeworks
   - [task-2](hw-08/task-2.py) - limiting the frequency of messages per user using throttling rate limiter
 - [hw-09](hw-09) - homework 9 - optimization algorithms
   - [task](hw-09/task.py) - using hill climbing, random local search and simulated annealing to find the minimum of a function
+- [hw-10](hw-10) - homework 10 - final task: quicksort and task planning
+  - [task-1](hw-10/task-1.py) - quicksort implementation with randomized and deterministic pivot selection
+![img_2.png](randomized_vs_deterministic_quicksort_time.png)
