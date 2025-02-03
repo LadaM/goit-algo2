@@ -34,3 +34,4 @@ Design and Analysis of Algorithms course homeworks
 - [hw-10](hw-10) - homework 10 - final task: quicksort and task planning
   - [task-1](hw-10/task-1.py) - quicksort implementation with randomized and deterministic pivot selection
 ![img_2.png](randomized_vs_deterministic_quicksort_time.png)
+  - [task-2](hw-10/task-2.py) - creating a schedule covering all given subjects given a list of teachers
